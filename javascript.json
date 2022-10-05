@@ -1,0 +1,9 @@
+{
+  "Create Setup Vue 3 Component" :{
+    "scope": "javascript,typescript,vue",
+    "prefix": "vuesetup",
+    "body": [
+      ""
+    ]
+  }
+}
