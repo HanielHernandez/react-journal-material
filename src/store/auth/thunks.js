@@ -3,13 +3,13 @@ import {
   registerUserWithEmailAndPassword,
   signInWithGoogle,
   signInUserWithEmailAndPassword,
+  logoutFirebase,
 } from "../../firebase/providers";
 import { async } from "@firebase/util";
 
 export const checkingAuthentication = (email, password) => {
   return async (dispatch) => {
     dispatch(checkingCredentials());
-  
   };
 };
 
@@ -49,7 +49,7 @@ export const startSignInWithEmailAndPassword = ({ email, password }) => {
   return async (dispatch) => {
     dispatch(checkingCredentials());
 
-    const { ok, uid, photoURL, errorMessage ,displayName} =
+    const { ok, uid, photoURL, errorMessage, displayName } =
       await signInUserWithEmailAndPassword({ email, password });
 
     if (!ok) return dispatch(logout({ errorMessage }));
@@ -57,3 +57,14 @@ export const startSignInWithEmailAndPassword = ({ email, password }) => {
     dispatch(login({ uid, displayName, photoURL, email }));
   };
 };
+
+export const startLogOut =  () => {
+  return async (dispatch) => {
+    await logoutFirebase();
+
+
+          
+    dispatch(logout({errorMessage: null}))
+  };
+};
+ 

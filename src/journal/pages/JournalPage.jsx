@@ -3,8 +3,11 @@ import { AddOutlined } from '@mui/icons-material';
 
 import { JournalLayout } from '../layout/JournalLayout';
 import { NoteView, NothingSelectedView } from '../views';
+import { useDispatch } from 'react-redux';
 
 export const JournalPage = () => {
+
+  const dispatch =  useDispatch()
   return (
     <JournalLayout>
       
