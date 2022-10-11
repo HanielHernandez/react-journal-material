@@ -16,13 +16,14 @@ import {
   startSignInWithEmailAndPassword,
 } from "../../store/auth";
 import { useMemo } from "react";
+
 const formData = {
   email: "",
   password: "",
 }
 
 export const LoginPage = () => {
-  const { email, password, onInputChange, formState } = useForm({formData});
+  const { email, password, onInputChange, formState } = useForm(formData);
 
   const { status, errorMessage } = useSelector((state) => state.auth);
 

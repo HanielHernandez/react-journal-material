@@ -34,7 +34,6 @@ export const useForm = (initialForm = {}, validations = {}) => {
         : errorMessage;
     }
     setformValidation(formCheckedValues);
-    console.log(formValidation)
 
   };
 
