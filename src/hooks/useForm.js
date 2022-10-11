@@ -21,6 +21,10 @@ export const useForm = (initialForm = {}, validations = {}) => {
     setFormState(initialForm);
   };
 
+  useEffect(() => {
+    setFormState(initialForm);
+  }, [initialForm]);
+
   const createValidators = () => {
     const formCheckedValues = {};
     for (const formField of Object.keys(validations)) {
